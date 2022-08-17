@@ -83,7 +83,6 @@ public class ImageUploadService {
         imageModel.setImageBytes(compressBytes(file.getBytes()));
         imageModel.setName(file.getOriginalFilename());
         LOG.info("Uploading image to post {}", post.getId());
-
         return imageRepository.save(imageModel);
     }
 
@@ -94,7 +93,6 @@ public class ImageUploadService {
         if (!ObjectUtils.isEmpty(imageModel)) {
             imageModel.setImageBytes(decompressBytes(imageModel.getImageBytes()));
         }
-
         return imageModel;
     }
 
@@ -104,7 +102,7 @@ public class ImageUploadService {
         if (!ObjectUtils.isEmpty(imageModel)) {
             imageModel.setImageBytes(decompressBytes(imageModel.getImageBytes()));
         }
-        
+
         return imageModel;
     }
 
